@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+function myFunction() {
+var weight= $('#txtweight').val();
+var height= $('#txtheight').val();
+<!--alert(weight + ' ' + height);-->
+  $.ajax({
+              type: "POST",
+			  url: "/calculatebmi",              
+              data: {txtweight:weight, txtheight:height}		
+			
+          }).done(function(response) {
+			var textval="";
+            var html= "<h1><p> <b> Your BMI is ";
+            response =response.result;
+                 $.each(response,function(key,val){
+                 console.log(val);
+                    html+= val+" kg/m2<b>";
+				
+				 <!--alert(val);-->
+				if (val < 18.5) {
+					textval = "<font color='blue'> (Underweight) </font>"; }				
+				else if ((val >= 18.5) && (val < 25)){
+					textval = "<font color='green'> (Normal) </font>";}
+				else if ((val >= 25) && (val < 30)){
+					textval = "<font color='yellow'> (Overweight) </font>";}
+				else if ((val >= 30) && (val < 35)){
+					textval = "<font color='orange'> (Obese) </font>";}
+				else {
+					textval = "<font color='purple'> (Extremely Obese) </font>";	}
+                });		
+				
+                html += textval + "<br>";
+                $(".show-data").html(html);
+            });						
+};
+
+function cleartxt() {	
+	$('#txtweight').val('');
+	$('#txtheight').val('');
+	$('#hdnbmi').val('');
+	var html = "<br>";
+	$(".show-data").html(html);
+}
+
+
+
+  </script>
+  <div class="home">
+	<!--<p>		
+        Enter the following data to calculate your BMI <br><br>
+		Weight <input type="text" id="txtweight" > in Kg  <br><br>
+	    Height <input type="text" id="txtheight" > in Cms <br><br>
+	   <button id="clicked" onclick="myFunction()">Calculate BMI</button><br><br>	
+    </p>-->
+	<br>
+	<table width=100%  border=0>
+	<tr><td colspan=2><h3>Calculate BMI</h3></td></tr>
+	<tr><td width=60% valign=top>
+	Enter the following data to calculate your BMI <br><br>
+	<table width="60%" border=0 >
+    <tr valign=top><td width=20%>     <br>   
+			Weight </td>
+			<td><br><input type="text" id="txtweight" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" > in Kg </td> </tr>
+	<tr><td width=20%>  <br>      
+            Height </td>
+			<td><br><input type="text" id="txtheight" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" > in Cms</td> </tr>
+	<tr align=center>
+	<td></td>
+	<td align=left><br>
+            <button  class="btnmain"  id="clicked" onclick="myFunction()">Calculate BMI</button>
+			<button class="btnmain" id="clear" onclick="cleartxt()">Clear</button>
+			</td>			
+	</tr>		
+	</table>
+	<input type="hidden" id="hdnbmi">
+  <div class="show-data" >
+  </div>
+	
+  </div>
+  </td>
+  <td>
+  <img src="./static/bmi-1.png" width="80%">
+  </td>
+  
+  <tr><td colspan=2>
+	<b>What is BMI? </b><br><br>
+	
+	<font face="verdana" >BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height. Specifically, the value obtained from the calculation of BMI is used to categorize whether a person is underweight, normal weight, overweight, or obese depending on what range the value falls between. These ranges of BMI vary based on factors such as region and age, and are sometimes further divided into subcategories such as severely underweight or very severely obese. Being overweight or underweight can have significant health effects, so while BMI is an imperfect measure of healthy body weight, it is a useful indicator of whether any additional testing or action is required. Refer to the table below to see the different categories based on BMI that are used by the calculator.</font>
+	</td>
+	</tr>
+   <tr><td colspan=2><br>
+   <b>Formula for calculating BMI = weight (in Kg) / (height) <sup>2</sup> in m<sup>2</sup></b>
+   </td></tr>
+  </table>
+{% endblock %}

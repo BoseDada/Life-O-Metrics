@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div>
+	<br>
+    <h3 align=center> Daily Step Trend Report </h2>
+      <br>
+      <p>The Python code has created a dictionary of the json files and hence. We obtain the json file names ‘shealth.step_daily_trend’. From this json file, we have extracted each and every variable and plotted out different combinations of the step trend from it. The resulting pair plot will show scatter plots for each combination of variables in the DataFrame. This visualization helps to identify potential relationships, patterns, and correlations between the variables. Each scatter plot will have the variable on the x-axis and y-axis, and the points will represent the data points for each variable pair.
+      </p>
+	<img src={{ steptrend }} >
+  </div>
+{% endblock %}

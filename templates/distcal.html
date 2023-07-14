@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div>
+	<br>
+    <h3 align=center> Device Data Comparison </h3>
+    <br>
+    <p>This comparison is based on the device readings taken. In this case, we have two devices: Samsung Galaxy M21 and Samsung Galaxy Watch 5.
+      <br>Device uuid: VfS0qUERdZ: Combined Data
+      <br>Device uuid: tt1DmOIfsY: Samsung Galaxy Watch 5
+      <br>Device uuid: 1xKy5/PJ+M: Samsung Galaxy M21
+    <br>The resulting pair plot will consist of a grid of scatter plots. Each scatter plot will display the relationship between two variables from the specified columns ('count', 'distance', 'calorie', and 'speed') on the x-axis and y-axis. The points in the scatter plots will be colored based on the values in the 'deviceuuid' column, allowing you to observe any patterns or relationships between the variables based on different devices represented by different colors.
+  </p>
+	<img src={{ dcscomp }} >
+  </div>
+{% endblock %}

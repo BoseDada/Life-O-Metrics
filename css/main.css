@@ -1,0 +1,119 @@
+
+body{
+	 margin: 0;
+	padding: 0;
+	font-family: verdana;
+	background-color: white;	
+	color: #444;
+ }
+ header {
+  background-color: brown ; /*#DFB887*/
+  height: 35px;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 30px;
+}
+header h1.logo {
+  margin: 0;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center
+  
+}
+header h1.logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu {
+  float: right;
+  margin-top: 8px;
+}
+.menu li {
+  display: inline;
+}
+.menu li + li {
+  margin-left: 35px;
+}
+.menu li a {
+  color: #444;
+  text-decoration: none;
+}
+
+.msg{
+	font-weight: bold;
+	color: black;
+	text-transform: uppercase;
+	text-align: 'center';
+}
+
+/*
+ * Centering the body content
+ */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+div.home {
+  padding: 10px 0 30px 0;
+  background-color: white; /*#E6E6FA*/
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+div.about {
+  padding: 10px 0 30px 0;
+  background-color: white; /*#E6E6FA*/
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+h2 {
+  font-size: 3em;
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+h3 {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #999;
+}
+
+.hmenu {
+  width: 1200px;
+  float: left;
+  margin-top: 8px;
+  list-style-type: none;
+  margin: 4;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+.hmenu li 
+{
+  float: left;  
+}
+.hmenu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+}
+.hmenu li a:hover {
+  background-color: #111111;
+}
+
+.btnmain {    
+	padding: 10px 10px;
+    background-color: brown;
+    color: #FFFFFF;        
+    border-radius: 10px;
+}	

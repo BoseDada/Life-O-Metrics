@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div>
+	<br>
+    <h3 align=center> Weekday - Weekend Comparison Step Report </h3>
+    <br>
+    <p>This chart gives us the data of user’s activity during the weekday and weekend. Here the Blue plots indicate the data of weekday and orange depict the data from weekend. The code performs a simple procedure extracting the day name from CSV file and then comparing it to the list of weekdays and weekends. The ‘is_weekend’ column is used as the hue parameter, which maps different levels of the 'is_weekend' variable to different colors in the scatter plots. This allows you to visualize the relationships between the other variables ('count', 'distance', 'calorie', 'speed') while considering the distinction between weekends and weekdays. Each point in the scatter plots will be colored based on whether the corresponding day is classified as a weekend or weekday.
+      The resulting pair plot will show scatter plots for the specified variables, with different colors indicating whether the day is a weekend or weekday. This can help identify any patterns or relationships between the variables based on the day of the week.
+      </p>
+	<img src={{ weekenday }} >
+  </div>
+{% endblock %}

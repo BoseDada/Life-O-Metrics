@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+    <title>Life-o-Metrics</title>   
+	<link rel="stylesheet" href="./static/css/main.css">
+	<link rel="stylesheet" href="./static/css/login.css">   
+  </head>
+  
+  <body class="container">
+    <header>
+      <div class="container">
+        <h1 class="logo" >Life-o-metrics</h1><br>
+		<div class="msg" align="center">Welcome, {{ msg }}</div>
+        <strong>
+		<nav>
+          <ul class="hmenu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>			
+            <li><a href="{{ url_for('dailysummary') }}">Daily Summary</a></li>
+			<li><a href="{{ url_for('distcal') }}">Device Data Comparison</a></li>
+			<li><a href="{{ url_for('weekenday') }}">Weekday-Weekend Comparison</a></li>
+			<li><a href="{{ url_for('steptrend') }}">Daily Step Trend</a></li>
+			<li><a href="{{ url_for('calculatebmi') }}">Calculate BMI</a></li>
+			<li><a href="{{ url_for('about') }}">About</a></li>
+			<li><a href="{{ url_for('logout') }}">Logout</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+	<br>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

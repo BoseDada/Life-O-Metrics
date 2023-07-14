@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div>
+	<br>
+    <h3 align=center> Daily Summary Report </h3>
+    <br>
+	<p>The Daily Summary Chart showcases the user’s activity in the past 4 months, from February 2023 to June 2023. <br>The step count, distance, calorie and create time from the daily summary CSV file is retrieved and presented here in a single plot depicting the user’s progress.<br> The blue line here depicts the step count for each day, which here crosses about 10,000 steps every day. However, we see a dip in the step count during the month of May, depicting that the person has not been engaged in more activity.<br> The orange line depicts the distance travelled in meters for each day. The average here, roughly gives us the value between 7500 meters to 10,000 meters. Same as the step count, the distance line experiences a dip and the average drops to nearly 5000 meters.<br> The Green line here depicts the calorie count/number of calories burnt. Here the average is about 1500 calories.</p>
+	<img src={{ dsum }} >
+  </div>
+{% endblock %}

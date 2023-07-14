@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="home">
+	<br>
+	<table width=100%>
+	<tr><td width=60% valign=top>	
+	<h3>Analysing Samsung Health Data from Samsung Watch using Samsung Health App</h3>
+	<br>
+	<p align=justify>The analysis is based on the data captured by my Samsung watch. The data was then pushed to the Samsung health app.
+	
+	It was then downloaded from the app in the form of CSV and JSON.
+	</p>
+  
+  </td>
+  <td>
+  <img src="./static/Sam-Watch.png" width=30%><img src="./static/Sam-App.png" width=30%>
+  </td>
+  </table>
+    
+	<p>Life-O-Metrics is a health parameter dashboard prepared with python for data analysis and visualisation of your health progress recorded by your mobile phones/smart watch. Here, we have used the data from Samsung Health provided by Samsung devices which keeps track of your data like step count, distance, calorie burn, sleep etc. We have also implemented a Body Mass Index (BMI) calculator which showcases your body composure and outer physical health.<br> The visualisation in performed by Python visualisation libraries such as matplotlib and seaborn. The data from Samsung Health is retrieved in the form of CSV files. 
+		<br>The main objective of this project is to understand data visualisation and analysis using given data from the user. It then provides the user with useful and important information about its health and fitness. <br>The Python code mainly performs data analysis and visualisation from the data. With glob and os modules of python, it reads the paths where the CSV and json files are stored. Further, we access multiple CSV files which have data such as daily step trend, sleep, stress, calorie, distance, pedometer values and many more. 
+		<br>After the identification of data we use plotting libraries to plot various trends and graphs. The graphs plotted are, daily summary of the user from the past 4 months, device reading of data, comparison of activity done in weekday and in the weekend. Lastly a BMI calculator is implemented.
+		<br>Flask is a framework for Python where we can display the output in the form of a web application. So, we import flask in our python project and create multiple functions so that our code can easily interact with the front end. The front end of the project is designed using HTML and Javascript to make it visually appealing and interactive. Using a localhost web server we launch the code in localhost:9099 and the output is thus, displayed.
+		The following technologies are used:
+		<br>Python - Flask
+		<br>HTML
+		<br>Javascript
+		<br>CSS
+		<br>MySQL
+		<br>
+	
+  </div>
+{% endblock %}
